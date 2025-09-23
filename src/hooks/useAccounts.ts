@@ -3,10 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 export type Account = {
   id: string;
   platform: 'instagram'|'facebook'|'linkedin'|'tiktok'|'youtube'|string;
-  username: string;
+  handle: string;
   displayName?: string;
-  connected: boolean;
-  createdAt?: string;
+  status: 'connected'|'pending'|'disconnected';
+  avatar?: string;
+  created_at?: string;
 };
 
 // Simple API utility for now - will be replaced with proper API client
