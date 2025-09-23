@@ -208,7 +208,6 @@ function AccountsPage() {
             <div className="mb-2 flex items-center gap-3">
               <div className="h-10 w-10 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800">
                 {a.avatar ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img src={a.avatar} alt="" className="h-full w-full object-cover" />
                 ) : null}
               </div>
