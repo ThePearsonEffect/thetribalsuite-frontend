@@ -11,7 +11,8 @@ export type Account = {
 };
 
 // Simple API utility for now - will be replaced with proper API client
-const BASE = (import.meta as any).env?.VITE_API_URL?.replace(/\/+$/, '') || 'http://localhost:8080';
+const BASE = (import.meta as any).env?.VITE_API_URL?.replace(/\/+$/, '') || 
+  (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8080');
 
 async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`);

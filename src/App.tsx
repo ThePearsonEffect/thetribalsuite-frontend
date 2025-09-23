@@ -6,7 +6,7 @@ import { useAccounts } from '@/hooks/useAccounts';
 // ---------- API base ----------
 export const BASE =
   (import.meta as any).env?.VITE_API_URL?.replace(/\/+$/, '') ||
-  'http://localhost:8080';
+  (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8080');
 
 // Small helper for POST
 async function postJSON<T>(path: string, body?: unknown): Promise<T> {

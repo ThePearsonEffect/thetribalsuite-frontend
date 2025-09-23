@@ -24,8 +24,10 @@ import {
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { toast } from 'sonner';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Use the same API base as the rest of the app
+const BASE = (import.meta as any).env?.VITE_API_URL?.replace(/\/+$/, '') || 
+  (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8080');
+const API = `${BASE}/api`;
 
 const ScheduledPosts = () => {
   const { token } = useAuth();
