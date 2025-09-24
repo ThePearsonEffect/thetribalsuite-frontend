@@ -12,7 +12,7 @@ export type Account = {
 
 // Simple API utility for now - will be replaced with proper API client
 const BASE = (import.meta as any).env?.VITE_API_URL?.replace(/\/+$/, '') || 
-  (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:8080');
+  'https://thetribalsuite-backend.onrender.com';
 
 async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`);

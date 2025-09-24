@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: thetribalsuite-frontend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /
