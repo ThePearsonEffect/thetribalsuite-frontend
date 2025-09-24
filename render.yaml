@@ -8,6 +8,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    buildCommand: ""
+    buildCommand: npm ci && npm run build
     startCommand: ""
     healthCheckPath: /
